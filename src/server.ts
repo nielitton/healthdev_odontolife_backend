@@ -3,9 +3,13 @@ import express, { NextFunction, Request, Response } from "express";
 import { router } from "./routes";
 import AppError from "./errors/appError";
 
+const cors = require('cors')
+
 const PORT = process.env.PORT || 3333;
 
 const app = express();
+
+app.use(cors)
 
 app.use(express.json());
 
