@@ -11,20 +11,18 @@ datasource db {
 }
 
 model Doctor {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
   name String
   password String
   advice String
   adviceState String
   adviceNumber Int
-  specialty Specialty @relation(fields: [specialtyName], references: [name], onDelete: Cascade, onUpdate: Cascade)
-  specialtyName String
   rqe Int
   memedSinc Boolean
   genre String
-  born DateTime
+  born String
   email String
-  rg String
+  rg Int
   cpf Int
   cns Int
   state String
@@ -33,31 +31,23 @@ model Doctor {
   numberHouse Int
   disctrict String
   complement String
-  clinic Clinic @relation(fields: [clinicName],references: [name], onDelete: Cascade, onUpdate: Cascade)
+  clinic Clinic @relation(fields: [clinicName], references: [name], onDelete: Cascade, onUpdate: Cascade)
   clinicName String
 
   @@map("doctor")
 }
-
-model Specialty {
-  id Int @id @default(autoincrement())
-  name String @unique
-  doctor Doctor[]
-
-  @@map("specialty")
-}
-
 model Unity {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
   name String @unique
   clinics Clinic[]
 }
 
 model Clinic {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
   name String @unique
   unity Unity @relation(fields: [unityName], references: [name], onDelete: Cascade, onUpdate: Cascade)
   unityName String
   doctors Doctor[]
+
   @@map("clinic")
 }

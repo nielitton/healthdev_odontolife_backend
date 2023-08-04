@@ -9,7 +9,6 @@ export class DoctorController {
       advice,
       adviceState,
       adviceNumber,
-      specialtyName,
       rqe,
       memedSinc,
       genre,
@@ -35,7 +34,6 @@ export class DoctorController {
       advice,
       adviceState,
       adviceNumber,
-      specialtyName,
       rqe,
       memedSinc,
       genre,
@@ -50,7 +48,7 @@ export class DoctorController {
       numberHouse,
       disctrict,
       complement,
-      clinicName,
+      clinicName
     });
 
     res.status(201).json(response);

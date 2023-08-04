@@ -4,13 +4,12 @@ export interface IDoctorCreate {
   advice: string;
   adviceState: string;
   adviceNumber: number;
-  specialtyName: string;
   rqe: number;
   memedSinc: boolean;
   genre: string;
   born: string;
   email: string;
-  rg: string;
+  rg: number;
   cpf: number;
   cns: number;
   state: string;

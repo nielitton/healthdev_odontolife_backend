@@ -4,21 +4,23 @@ import { prisma } from "../../prisma/client";
 
 export class DoctorService {
   async execute({
-    name, password, advice, adviceState, adviceNumber, specialtyName, rqe, memedSinc,
+    name, password, advice, adviceState, adviceNumber, rqe, memedSinc,
     genre, born, email, rg, cpf, cns, state, city, street, numberHouse, disctrict, complement, clinicName,
   }: IDoctorCreate): Promise<Doctor> {
     const newDoctor = await prisma.doctor.create({
         data: {
-            name, password, advice, adviceState, adviceNumber, specialtyName, rqe, memedSinc,
+            name, password, advice, adviceState, adviceNumber, rqe, memedSinc,
     genre, born, email, rg, cpf, cns, state, city, street, numberHouse, disctrict, complement, clinicName,     
         }
     })
 
     return newDoctor
   }
-  async getOneDoctor({ id }) {
+  async getOneDoctor({ id }: { id: string }) {
     const doctor = await prisma.doctor.findFirst({
-        where: id,
+        where: {
+          id
+        }
     })
 
     return doctor

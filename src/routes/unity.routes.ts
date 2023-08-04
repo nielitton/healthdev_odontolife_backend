@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { DoctorController } from "../controllers/doctor.controller";
+import { UnityController } from "../controllers/unity.controller";
 
 export const unityRouter = Router()
-const unityController = new DoctorController()
+const unityController = new UnityController()
 
 unityRouter.post("/", unityController.createHandle)
 unityRouter.get("/:id", unityController.getOneHandle)
