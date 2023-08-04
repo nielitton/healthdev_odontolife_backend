@@ -1,5 +1,5 @@
+import "express-async-errors";
 import express, { NextFunction, Request, Response } from "express";
-import errorHandler from "./middlewares/errorHandler.middleware";
 import { router } from "./routes";
 import AppError from "./errors/appError";
 
