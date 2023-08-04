@@ -21,4 +21,11 @@ export class UnityController {
 
         res.status(200).json(response)
     }
+    async getAll(req: Request, res: Response) {
+        const unities = new UnityService()
+    
+        const response = await unities.getAll()
+    
+        res.status(200).json(response)
+      }
 }

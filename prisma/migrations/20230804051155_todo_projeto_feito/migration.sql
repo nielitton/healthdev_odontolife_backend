@@ -1,18 +1,33 @@
-/*
-  Warnings:
+-- CreateTable
+CREATE TABLE "doctor" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
+    "advice" TEXT NOT NULL,
+    "adviceState" TEXT NOT NULL,
+    "adviceNumber" INTEGER NOT NULL,
+    "rqe" INTEGER NOT NULL,
+    "memedSinc" BOOLEAN NOT NULL,
+    "genre" TEXT NOT NULL,
+    "born" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "rg" INTEGER NOT NULL,
+    "cpf" INTEGER NOT NULL,
+    "cns" INTEGER NOT NULL,
+    "state" TEXT NOT NULL,
+    "city" TEXT NOT NULL,
+    "street" TEXT NOT NULL,
+    "numberHouse" INTEGER NOT NULL,
+    "disctrict" TEXT NOT NULL,
+    "complement" TEXT NOT NULL,
+    "clinicName" TEXT NOT NULL,
 
-  - Added the required column `clinicName` to the `doctor` table without a default value. This is not possible if the table is not empty.
-  - Changed the type of `numberHouse` on the `doctor` table. No cast exists, the column would be dropped and recreated, which cannot be done if there is data, since the column is required.
-
-*/
--- AlterTable
-ALTER TABLE "doctor" ADD COLUMN     "clinicName" TEXT NOT NULL,
-DROP COLUMN "numberHouse",
-ADD COLUMN     "numberHouse" INTEGER NOT NULL;
+    CONSTRAINT "doctor_pkey" PRIMARY KEY ("id")
+);
 
 -- CreateTable
 CREATE TABLE "Unity" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
 
     CONSTRAINT "Unity_pkey" PRIMARY KEY ("id")
@@ -20,7 +35,7 @@ CREATE TABLE "Unity" (
 
 -- CreateTable
 CREATE TABLE "clinic" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "unityName" TEXT NOT NULL,
 

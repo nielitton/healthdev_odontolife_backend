@@ -21,4 +21,11 @@ export class ClinicController {
 
         res.status(200).json(response)
     }
+    async getAll(req: Request, res: Response) {
+        const clinics = new ClinicService()
+    
+        const response = await clinics.getAll()
+    
+        res.status(200).json(response)
+      }
 }

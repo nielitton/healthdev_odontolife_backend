@@ -20,4 +20,9 @@ export class ClinicService {
 
     return clinics
   }
+  async getAll() {
+    const clinics = prisma.clinic.findMany()
+
+    return clinics
+  }
 }

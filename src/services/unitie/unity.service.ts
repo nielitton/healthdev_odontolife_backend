@@ -21,4 +21,9 @@ export class UnityService {
 
     return unities
   }
+  async getAll() {
+    const unities = prisma.unity.findMany()
+
+    return unities
+  }
 }

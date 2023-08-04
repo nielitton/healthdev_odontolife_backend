@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE "doctor" ALTER COLUMN "born" SET DATA TYPE TEXT;
