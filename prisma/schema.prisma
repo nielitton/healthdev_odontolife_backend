@@ -30,7 +30,7 @@ model Doctor {
   state String
   city String
   street String
-  numberHouse String
+  numberHouse Int
   disctrict String
   complement String
   clinic Clinic @relation(fields: [clinicName],references: [name], onDelete: Cascade, onUpdate: Cascade)
