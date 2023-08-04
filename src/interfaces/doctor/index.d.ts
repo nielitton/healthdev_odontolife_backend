@@ -1,5 +1,4 @@
 export interface IDoctorCreate {
-  id: number;
   name: string;
   password: string;
   advice: string;
