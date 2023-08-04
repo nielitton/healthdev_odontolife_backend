@@ -17,6 +17,7 @@ model Doctor {
   advice String
   adviceState String
   adviceNumber Int
+  specialty String
   rqe Int
   memedSinc Boolean
   genre String

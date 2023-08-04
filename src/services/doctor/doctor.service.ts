@@ -9,6 +9,7 @@ export class DoctorService {
     advice,
     adviceState,
     adviceNumber,
+    specialty,
     rqe,
     memedSinc,
     genre,
@@ -32,6 +33,7 @@ export class DoctorService {
         advice,
         adviceState,
         adviceNumber,
+        specialty,
         rqe,
         memedSinc,
         genre,
@@ -56,6 +58,35 @@ export class DoctorService {
     const doctor = await prisma.doctor.findFirst({
       where: {
         id,
+      },
+      select: {
+        id: true,
+        name: true,
+        password: true,
+        advice: true,
+        adviceState: true,
+        adviceNumber: true,
+        rqe: true,
+        memedSinc: true,
+        genre: true,
+        born: true,
+        email: true,
+        rg: true,
+        cpf: true,
+        cns: true,
+        state: true,
+        city: true,
+        street: true,
+        numberHouse: true,
+        disctrict: true,
+        complement: true,
+        clinic: {
+          select: {
+            id: true,
+            name: true,
+            unityName: true,
+          },
+        },
       },
     });
 
@@ -115,8 +146,8 @@ export class DoctorService {
     return changedDoctor;
   }
   async getAll() {
-    const allDoctors = prisma.doctor.findMany()
+    const allDoctors = prisma.doctor.findMany();
 
-    return allDoctors
+    return allDoctors;
   }
 }

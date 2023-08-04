@@ -4,6 +4,7 @@ export interface IDoctorCreate {
   advice: string;
   adviceState: string;
   adviceNumber: number;
+  specialty: string;
   rqe: number;
   memedSinc: boolean;
   genre: string;
@@ -28,6 +29,7 @@ export interface IDoctorUpdate {
   advice: string;
   adviceState: string;
   adviceNumber: number;
+  specialty: string;
   rqe: number;
   memedSinc: boolean;
   genre: string;
